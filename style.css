@@ -321,7 +321,7 @@ a:hover {
     padding: 1rem 0;
     padding-right: 400px;
     transition: var(--transition-smooth);
-    /* background: var(--card); */
+    background: var(--card);
     /* background: linear-gradient(135deg, var(--royal-gold)0%, var(--premium-blue)100%); */
 }
 
@@ -2250,4 +2250,39 @@ a:focus {
     padding: 0.65rem 0.85rem;
   }
 }
+
+/* Center the whole contact section */
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem; /* spacing around */
+}
+
+.contact-content {
+  width: 100%;
+  max-width: 1100px; /* keeps it centered like a container */
+  margin: 0 auto;
+}
+
+/* Center form & info vertically on small screens */
+@media (max-width: 768px) {
+  .contact-content {
+    text-align: center;
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    align-items: center;
+  }
+
+  .form-group {
+    align-items: center;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%; /* make inputs take full width */
+  }
+}
+
 

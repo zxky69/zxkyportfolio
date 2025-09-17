@@ -321,7 +321,7 @@ a:hover {
     padding: 1rem 0;
     padding-right: 400px;
     transition: var(--transition-smooth);
-    background: var(--card);
+    /* background: var(--card); */
     /* background: linear-gradient(135deg, var(--royal-gold)0%, var(--premium-blue)100%); */
 }
 

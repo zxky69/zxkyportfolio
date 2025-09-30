@@ -744,8 +744,8 @@ section {
     height: 100%;
     background: linear-gradient(135deg, var(--primary-gold), hsl(51, 80%, 60%));
     border-radius: var(--radius);
-    width: 0; /* Start from 0 */
-    transition: width 1.5s ease-in-out; /* Smooth animation */
+    width: 0; 
+    transition: width 1.5s ease-in-out;
 }
 
 

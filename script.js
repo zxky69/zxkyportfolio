@@ -1,4 +1,4 @@
-// Premium Portfolio JavaScript for Mohd Umar
+// Premium Portfolio JavaScript for al faheem
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize Lucide icons
     if (window.lucide) {
@@ -215,16 +215,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Back to Top Button
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-        backToTop.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
+ // Back to Top Button
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTop = document.getElementById("backToTop");
+
+  if (backToTop) {
+    // Show button on scroll
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    // Smooth scroll to top
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+});
+
 
     // Update Current Year in Footer
     const yearEl = document.getElementById('currentYear');
@@ -337,25 +351,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Animate skill progress bars
-function initSkillBars() {
-    // This will be triggered by scroll animation
-}
+// function initSkillBars() {
+   
+// }
 
-function animateSkillBars() {
-    const progressBars = document.querySelectorAll('.progress-fill');
+// function animateSkillBars() {
+//     const progressBars = document.querySelectorAll('.progress-fill');
     
-    progressBars.forEach(bar => {
-        const width = bar.getAttribute('data-width');
-        setTimeout(() => {
-            bar.style.width = width + '%';
-        }, 300);
-    });
-}
+//     progressBars.forEach(bar => {
+//         const width = bar.getAttribute('data-width');
+//         setTimeout(() => {
+//             bar.style.width = width + '%';
+//         }, 300);
+//     });
+// }
 
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+//   const menuToggle = document.getElementById("menu-toggle");
+//   const mobileMenu = document.getElementById("mobileMenu");
 
-  menuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-  });
+//   menuToggle.addEventListener("click", () => {
+//     mobileMenu.classList.toggle("active");
+//   });
 

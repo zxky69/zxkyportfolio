@@ -91,7 +91,7 @@
           <div class="hero-buttons">
             <a href="#portfolio" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-outline">
-              <i data-lucide="message-circle" class="icon"></i>
+              <!-- <i data-lucide="message-circle" class="icon"></i> -->
               Get In Touch
             </a>
           </div>
@@ -102,10 +102,10 @@
             <div class="stat-number">1</div>
             <div class="stat-label">Year Experience</div>
           </div>
-          <div class="stat-card">
+          <!-- <div class="stat-card">
                     <div class="stat-number"></div>
-                    <div class="stat-label">CODE IS LIKE A HUMOUR, WHEN YOU HAV TO EXPLAIN IT, <br>IT'S BAD</div>
-                </div>
+                    <div class="stat-label"></div>
+                </div> -->
           <div class="stat-card">
             <div class="stat-number">20+</div>
             <div class="stat-label">Projects Completed</div>
@@ -1199,10 +1199,10 @@
               </a>
             </div>
 
-            <!-- <button id="backToTop" class="btn btn-outline">
+            <a href="#home"><button id="backToTop" class="btn btn-outline">
               <i data-lucide="arrow-up" class="icon"></i>
               Back to Top
-            </button> -->
+            </button></a>
           </div>
         </div>
 
@@ -1239,6 +1239,19 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   lucide.createIcons();
+</script>
+<script>
+  // Animate skill bars on page load
+document.addEventListener("DOMContentLoaded", () => {
+  const skillBars = document.querySelectorAll(".skill-progress");
+
+  skillBars.forEach(bar => {
+    const progress = bar.dataset.progress;
+    bar.style.width = progress + "%";
+  });
+});
+
+
 </script>
 
   </body>

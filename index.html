@@ -760,7 +760,7 @@
                 class="author-image"
               />
               <div class="author-info">
-                <div class="author-name">Sarah Johnson</div>
+                <div class="author-name">Sarah</div>
                 <div class="author-role">CEO, TechStart Inc.</div>
                 <div class="author-company">TechStart Inc.</div>
               </div>
@@ -788,7 +788,7 @@
                 class="author-image"
               />
               <div class="author-info">
-                <div class="author-name">Michael Chen</div>
+                <div class="author-name">Michael</div>
                 <div class="author-role">Founder, EcoLiving</div>
                 <div class="author-company">EcoLiving</div>
               </div>
@@ -816,7 +816,7 @@
                 class="author-image"
               />
               <div class="author-info">
-                <div class="author-name">Emily Rodriguez</div>
+                <div class="author-name">Emily</div>
                 <div class="author-role">
                   Marketing Director, Fashion Forward
                 </div>
@@ -846,7 +846,7 @@
                 class="author-image"
               />
               <div class="author-info">
-                <div class="author-name">David Wilson</div>
+                <div class="author-name">David</div>
                 <div class="author-role">CTO, FinanceFlow</div>
                 <div class="author-company">FinanceFlow</div>
               </div>
@@ -902,7 +902,7 @@
                 class="author-image"
               />
               <div class="author-info">
-                <div class="author-name">Alex Kumar</div>
+                <div class="author-name">Tyson</div>
                 <div class="author-role">CEO, DataInsights</div>
                 <div class="author-company">DataInsights</div>
               </div>
@@ -1251,6 +1251,27 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Check if both elements exist before trying to use them
+    if (menuToggle && mobileMenu) {
+        // 1. Add an event listener to the toggle button
+        menuToggle.addEventListener('click', function () {
+            // 2. Toggle a class on the mobile menu to show/hide it
+            mobileMenu.classList.toggle('active');
+        });
+
+        // OPTIONAL: Close menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+});
 
 </script>
 

@@ -94,7 +94,7 @@ body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--foreground);
-    background-color: var(--background);
+    background-color:  hsl(0, 0%, 4%);
     transition: var(--transition-smooth);
 }
 
@@ -311,7 +311,19 @@ a:hover {
     animation: float 3s ease-in-out infinite;
 }
 
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Navigation */
+/* Default Transparent Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -321,8 +333,32 @@ a:hover {
     padding: 1rem 0;
     padding-right: 400px;
     transition: var(--transition-smooth);
+    background: rgba(0, 0, 0, 0.2); /* transparent with a slight tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* for Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Darker glass when scrolled */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: var(--shadow-luxury);
+}
+
+/* .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    padding-right: 400px;
+    transition: var(--transition-smooth);
     background: var(--card);
-    /* background: linear-gradient(135deg, var(--royal-gold)0%, var(--premium-blue)100%); */
+    background: linear-gradient(135deg, var(--royal-gold)0%, var(--premium-blue)100%);
 }
 
 .navbar.scrolled {
@@ -330,7 +366,7 @@ a:hover {
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
     box-shadow: var(--shadow-luxury);
-}
+} */
 
 .navbar-content {
     display: flex;

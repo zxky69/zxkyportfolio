@@ -1273,6 +1273,45 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// Theme Management
+let isDarkMode = localStorage.getItem('theme') === 'dark';
+
+// Default to dark if nothing is stored
+if (localStorage.getItem('theme') === null) {
+    isDarkMode = true;
+    localStorage.setItem('theme', 'dark');
+}
+
+if (isDarkMode) {
+    document.documentElement.classList.add('dark');
+    updateDarkModeIcon(true);
+} else {
+    document.documentElement.classList.remove('dark');
+    updateDarkModeIcon(false);
+}
+
+// Staggered Reveal Animation
+const revealItems = document.querySelectorAll(".reveal-item");
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const items = entry.target.querySelectorAll(".reveal-child");
+
+      items.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.add("visible");
+        }, index * 200); // delay each item by 200ms
+      });
+
+      observer.unobserve(entry.target); // run once per section
+    }
+  });
+}, { threshold: 0.2 });
+
+revealItems.forEach(section => {
+  revealObserver.observe(section);
+});
 </script>
 
   </body>
